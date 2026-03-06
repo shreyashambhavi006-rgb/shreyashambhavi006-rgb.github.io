@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SS Notary Services | Pickering</title>
+  <style>
+    :root{
+      --green-900:#163d35;
+      --green-800:#1f5a4d;
+      --green-700:#2c7a68;
+      --green-100:#ecf7f3;
+      --green-050:#f6fbf9;
+      --text:#1f2937;
+      --muted:#667085;
+      --line:#d9e7e2;
+      --white:#ffffff;
+      --shadow:0 18px 42px rgba(22,61,53,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:linear-gradient(180deg,#edf7f3 0%,#f9fcfb 100%)}
+    a{color:var(--green-700)}
+    .container{max-width:1100px;margin:0 auto;padding:22px 18px 46px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;padding:12px 4px;color:var(--green-900)}
+    .brand{font-size:1.2rem;font-weight:700;letter-spacing:.02em}
+    .topmeta{font-size:.96rem;color:var(--muted)}
+    .hero{position:relative;border-radius:28px;overflow:hidden;min-height:430px;display:flex;align-items:stretch;box-shadow:var(--shadow);background:#153b34}
+    .hero-image{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(12,34,29,.86) 0%,rgba(12,34,29,.68) 42%,rgba(12,34,29,.36) 100%),url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;transform:scale(1.03)}
+    .hero-content{position:relative;z-index:1;width:100%;padding:52px 42px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;opacity:.92;margin-bottom:12px}
+    h1{margin:0 0 12px;font-size:3rem;line-height:1.05;max-width:560px}
+    .hero-buttons{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:700;transition:.2s ease}
+    .btn-primary{background:#fff;color:var(--green-900)}
+    .btn-secondary{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(4px)}
+    .stats{position:relative;z-index:1;margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+    .stat{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:#fff;padding:12px 14px;border-radius:16px;min-width:160px;backdrop-filter:blur(6px)}
+    .stat strong{display:block;font-size:1rem;margin-bottom:4px}
+    .about-card{margin-top:20px;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 28px rgba(22,61,53,.06)}
+    .about-card h2{margin:0 0 14px;color:var(--green-900);font-size:1.4rem}
+    .about-card p{margin:0;line-height:1.65}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;margin-top:20px}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 28px rgba(22,61,53,.06)}
+    .card h2{margin:0 0 14px;color:var(--green-900);font-size:1.4rem}
+    .card p{margin:0 0 12px;line-height:1.65}
+    .muted{color:var(--muted)}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+    .price-box{background:linear-gradient(180deg,var(--green-100) 0%,var(--green-050) 100%);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .price-box .label{font-size:.94rem;color:var(--muted);margin-bottom:6px}
+    .price-box .amount{font-size:2rem;font-weight:700;color:var(--green-900)}
+    .contact-list{display:grid;gap:14px}
+    .contact-item{padding:14px 0;border-bottom:1px solid var(--line)}
+    .contact-item:last-child{border-bottom:none;padding-bottom:0}
+    .contact-item strong{display:block;margin-bottom:6px;color:var(--green-900)}
+    .badge{display:inline-block;margin-top:8px;background:#eef8f4;color:var(--green-800);border:1px solid #cfe4dc;padding:8px 12px;border-radius:999px;font-size:.9rem;font-weight:700}
+    .feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .feature{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 10px 26px rgba(22,61,53,.05);min-height:170px;position:relative;overflow:hidden}
+    .feature::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--green-700),var(--green-800))}
+    .feature strong{display:block;margin:6px 0 10px;color:var(--green-900);font-size:1.05rem}
+    .icon{font-size:1.8rem}
+    .info-strip{margin-top:20px;background:linear-gradient(135deg,var(--green-900),var(--green-800));color:#fff;border-radius:22px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;box-shadow:var(--shadow)}
+    .info-strip h3{margin:0 0 8px;font-size:1.4rem}
+    .info-strip p{margin:0;color:rgba(255,255,255,.92);line-height:1.65}
+    ul{margin:0;padding-left:20px}
+    li{margin:0 0 10px;line-height:1.55}
+    .footer{text-align:center;margin-top:26px;color:var(--muted);font-size:.95rem}
+    @media (max-width:900px){h1{font-size:2.3rem}.grid{grid-template-columns:1fr}.feature-row{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.info-strip{grid-template-columns:1fr}.hero-content{padding:36px 24px}.hero{min-height:400px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">SS Notary Services</div>
+      <div class="topmeta">Pickering, Ontario</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Professional Notary Services</div>
+        <h1>Convenient notarization services in Pickering</h1>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="tel:6473941774">Book an Appointment</a>
+          <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=2009+Whisky+Gate+Pickering+ON" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>First document</strong>$35</div>
+          <div class="stat"><strong>Additional documents</strong>$15 each</div>
+          <div class="stat"><strong>Availability</strong>Monday to Friday<br>Weekend appointments also available</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-card">
+      <h2>About Me</h2>
+      <p>Lawyer, called to the Bar in Ontario, providing prompt and professional notary public services in Pickering.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>About the Service</h2>
+        <p>SS Notary Services provides prompt, affordable, and professional support for clients who require notarization, document certification, and oath or declaration services in Pickering.</p>
+        <p class="muted">Weekend appointments may also be accommodated with prior appointment. Please call before coming in so availability can be confirmed.</p>
+        <div class="pricing">
+          <div class="price-box"><div class="label">First document</div><div class="amount">$35</div></div>
+          <div class="price-box"><div class="label">Each additional document</div><div class="amount">$15</div></div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Contact & Location</h2>
+        <div class="contact-list">
+          <div class="contact-item"><strong>Phone</strong><div><a href="tel:6473941774">647-394-1774</a> / <a href="tel:6729850283">672-985-0283</a></div></div>
+          <div class="contact-item"><strong>Appointments</strong><div>Monday to Friday, with weekend appointments also available.</div></div>
+        </div>
+        <span class="badge">Please call before visiting</span>
+      </aside>
+    </div>
+
+    <section class="feature-row">
+      <div class="feature"><div class="icon">⚖️</div><strong>Professional legal setting</strong>Clean, polished presentation that gives the impression of a legal and documentation-focused service.</div>
+      <div class="feature"><div class="icon">📝</div><strong>Smooth document process</strong>Bring your documents, valid ID, and any special instructions for an efficient appointment.</div>
+      <div class="feature"><div class="icon">📍</div><strong>Convenient Pickering service</strong>The site includes a direct Google Maps button without displaying the address on the main page.</div>
+    </section>
+
+    <section class="card" style="margin-top:20px;">
+      <h2>Before Your Appointment</h2>
+      <ul>
+        <li>Bring printed copies of the documents that need to be notarized.</li>
+        <li>Bring the original documents requiring notarization.</li>
+        <li>Carry valid government-issued identification.</li>
+        <li>Do not sign documents in advance where witnessing is required.</li>
+        <li>Share any special instructions ahead of your appointment.</li>
+      </ul>
+    </section>
+
+    <section class="info-strip">
+      <div>
+        <h3>Need directions to the Pickering location?</h3>
+        <p>The website includes a live Google Maps link for the Pickering location.</p>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=2009+Whisky+Gate+Pickering+ON" target="_blank" rel="noopener">Open Google Maps</a>
+      </div>
+    </section>
+
+    <div class="footer">SS Notary Services · Pickering, Ontario</div>
+  </div>
+</body>
+</html>
